@@ -1,0 +1,15 @@
+<div>
+ <form (submit)="agregarNuevoTodo()">
+<div class="form-group">
+<input [(ngModel)]= "descripcion" type="text" name="descripcion" class="form-control" placeholder="Agregar">
+</div>
+<input class= "btn btn-primary" type="submit"value= "Agregar">
+ </form>
+
+<ul class="list-group">
+ <li class="list-group-item" [class.tachado] = "todo.isDone" *ngFor="let todo of todos" (click)= "todo.isDone = !todo.isDone">
+    {{todo.descripcion}}
+ </li>  
+</ul>
+
+</div>
